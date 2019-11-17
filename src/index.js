@@ -16,8 +16,8 @@ screen.addEventListener("mousemove", (event) =>{
 
 function drawing(coodinateX, coodinateY){
     contextScreen.beginPath();
-    // contextScreen.moveTo(coodinateX, coodinateY);
-    contextScreen.moveTo(0,0);
-    contextScreen.lineTo(coodinateX, coodinateY);
+    // contextScreen.moveTo(0,0);
+    contextScreen.moveTo(coodinateX, coodinateY);
+    contextScreen.lineTo(coodinateX + 3, coodinateY);
     contextScreen.stroke();
  };
