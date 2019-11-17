@@ -8,17 +8,16 @@ const line = {
     moving: false
 }
 
-console.log(screen.offsetTop/2 )
-
 screen.addEventListener("mousemove", (event) =>{
-    drawing(event.x, event.y-);
+    drawing(event.offsetX, event.offsetY);
 });
 
 
 
 function drawing(coodinateX, coodinateY){
     contextScreen.beginPath();
-    contextScreen.moveTo(coodinateX - 2, coodinateY );
+    // contextScreen.moveTo(coodinateX, coodinateY);
+    contextScreen.moveTo(0,0);
     contextScreen.lineTo(coodinateX, coodinateY);
     contextScreen.stroke();
-}
+ };
