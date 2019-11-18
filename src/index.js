@@ -10,8 +10,6 @@ const drawController = {
 }
 
 function startDraw(e) {
-    drawController.x = event.offsetX;
-    drawController.y = event.offsetY;
     drawController.drawing = true;
     contextScreen.beginPath();
 };
@@ -32,3 +30,5 @@ function draw(e){
 screen.addEventListener("mousedown", startDraw, false);
 screen.addEventListener("mouseup", finishDraw, false);
 screen.addEventListener("mousemove", draw, false);
+screen.addEventListener("mouseover", () =>{ drawController.drawing = false }, false);
+
