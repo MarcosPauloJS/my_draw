@@ -1,31 +1,34 @@
 const screen = document.querySelector("#screen");
 const contextScreen = screen.getContext("2d");
 
-const line = {
+const drawController = {
     x : 0,
     y : 0,
     size : 3,
     color : "rgb(0, 0, 0)",
-    moving: false
+    drawing: false
 }
 
-
-screen.addEventListener("mousemove", event =>{
-    line.x = event.offsetX; 
-    line.y = event.offsetY; 
-    drawing();
-    }, false);
-
-
-
-function drawing(){
-    
-
+function startDraw(e) {
+    drawController.x = event.offsetX;
+    drawController.y = event.offsetY;
+    drawController.drawing = true;
     contextScreen.beginPath();
-    // contextScreen.moveTo(0,0);
-    contextScreen.moveTo(line.x, line.y);
-    contextScreen.lineTo(line.x + 3, line.y);
-    contextScreen.stroke();
-    console.log("função");
-    requestAnimationFrame(drawing)
- };
+};
+function finishDraw(e) {
+    drawController.drawing = false;
+};
+
+function draw(e){
+    if(drawController.drawing){
+        contextScreen.lineWidth = 6;
+        contextScreen.lineCap = "round";
+        contextScreen.lineTo(e.offsetX, e.offsetY);
+        contextScreen.stroke();
+    }
+
+}
+
+screen.addEventListener("mousedown", startDraw, false);
+screen.addEventListener("mouseup", finishDraw, false);
+screen.addEventListener("mousemove", draw, false);
