@@ -3,6 +3,10 @@ const contextScreen = screen.getContext("2d");
 
 const menuController = document.querySelector("#menuController")
 
+const toolControler = {
+    inputlSize: document.querySelector("#sizeToll")
+}
+
 const drawController = {
     tool: "pencil",
     x : 0,
@@ -58,7 +62,10 @@ function menuOptions(e){
      drawController.drawing = false 
  }
 
-
+function sizing(e){
+    drawController.size = e.value;
+    console.log(drawController.size);
+}
 
 // lista de eventos 
 screen.addEventListener("mousedown", startDraw, false);
@@ -68,4 +75,8 @@ screen.addEventListener("mouseover", lostFocus, false);
 
 // pegando inpulte do menu
 menuController.addEventListener("click", menuOptions)
+toolControler.inputlSize.addEventListener("change", sizing)
+
+
+
 

@@ -41,7 +41,6 @@
     background-repeat: no-repeat;
 }
 .wraper >#menuController >#pencil{
-    
     background-image: url("../assets/img/edit.svg");
 }
 .wraper >#menuController >#rubber{
@@ -57,11 +56,13 @@
     border: none;
 }
 
-
-
 .wraper >.title{
     margin-top: 5%;
     text-align: center;
     font-size: 5em;
     color: #333333;
+}
+
+.btn-active{
+    z-index: -10;
 }
