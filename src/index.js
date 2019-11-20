@@ -4,7 +4,7 @@ const contextScreen = screen.getContext("2d");
 const menuController = document.querySelector("#menuController")
 
 const toolControler = {
-    inputlSize: document.querySelector("#sizeToll")
+    inputlSize: document.querySelector("#sizeTool")
 }
 
 const drawController = {
@@ -33,6 +33,7 @@ function draw(e){
         contextScreen.strokeStyle = drawController.color;
         contextScreen.lineWidth = drawController.size;
         contextScreen.lineCap = "round";
+        contextScreen.lineJoin = "round";
         contextScreen.lineTo(e.offsetX, e.offsetY);
         contextScreen.stroke();
     }
@@ -63,7 +64,7 @@ function menuOptions(e){
  }
 
 function sizing(e){
-    drawController.size = e.value;
+    drawController.size = e.target.value;
     console.log(drawController.size);
 }
 
