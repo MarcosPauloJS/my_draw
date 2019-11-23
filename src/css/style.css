@@ -7,62 +7,22 @@
     font-family: 'Cousine', sans-serif;
 }
 
-.wraper >#screen{
-    position: absolute;
-    display: block;
-    top: 50%;
-    left: 50%;
-    border: 5px solid #333333;
-    border-radius: 17px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    transform: translate(-50%, -50%);
+.screen{
+    width: 100vw;
+    height: 100vh;
 }
-
-.wraper >#menuController{
+.screen >#optionsBar{
+    height: 5vh;
+    background-color: #333333;
     display: flex;
-    align-items: stretch;
-    width: 212px;
-    height: 75px;
-    border: 5px solid #333333;
-    border-radius: 17px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin: 36% auto 0 auto;
+    align-items: center;
+}
+.screen >#optionsBar >.brand{
+    margin-left: 1%;
+    font-size: 3.3vh;
+    color: #fff;
 }
 
-.wraper >#menuController >.btn-option{
-    display: inline-block;
-    width: 33%;
-    margin: auto;
-    height: 68px;
-    color: red;
-    border-right: 5px solid #333333;
-    background-size: 48px 48px;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.wraper >#menuController >#pencil{
-    background-image: url("../assets/img/edit.svg");
-}
-.wraper >#menuController >#rubber{
-    background-image: url("../assets/img/rubber.svg");
-}
-.wraper >#menuController >#clear{
-
-    background-image: url("../assets/img/garbage.svg");
-}
-
-
-.wraper >#menuController >.btn-option:last-child{
-    border: none;
-}
-
-.wraper >.title{
-    margin-top: 5%;
-    text-align: center;
-    font-size: 5em;
-    color: #333333;
-}
-
-.btn-active{
-    z-index: -10;
+.screen >#drawArea{
+    
 }

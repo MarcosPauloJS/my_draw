@@ -1,5 +1,5 @@
-const screen = document.querySelector("#screen");
-const contextScreen = screen.getContext("2d");
+const drawArea = document.querySelector("#drawArea");
+const contextdrawArea = drawArea.getContext("2d");
 
 const menuController = document.querySelector("#menuController")
 
@@ -9,19 +9,28 @@ const toolControler = {
 
 const drawController = {
     tool: "pencil",
-    x : 0,
-    y : 0,
+    width: 1920,
+    heigth : 720,
     size : 3,
     color : "rgb(0, 0, 0)",
     drawing: false
+}
+
+// inicializador de aplicação
+window.addEventListener("load", resizeScreen)
+
+function resizeScreen(){
+    drawArea.width = window.innerWidth;
+    drawArea.height = window.innerHeight;
 }
 
 // função para comecar o desenho
 function startDraw(e) {
     drawController.drawing = true;
     // garante que a linha não se junte com a antetior
-    contextScreen.beginPath();
+    contextdrawArea.beginPath();
 };
+
 // finaliza o desenho da linha assim que solta o botão do mouse 
 function finishDraw(e) {
     drawController.drawing = false;
@@ -30,16 +39,16 @@ function finishDraw(e) {
 // função resposavel pelo desenho
 function draw(e){
     if(drawController.drawing){
-        contextScreen.strokeStyle = drawController.color;
-        contextScreen.lineWidth = drawController.size;
-        contextScreen.lineCap = "round";
-        contextScreen.lineJoin = "round";
-        contextScreen.lineTo(e.offsetX, e.offsetY);
-        contextScreen.stroke();
+        contextdrawArea.strokeStyle = drawController.color;
+        contextdrawArea.lineWidth = drawController.size;
+        contextdrawArea.lineCap = "round";
+        contextdrawArea.lineJoin = "round";
+        contextdrawArea.lineTo(e.offsetX, e.offsetY);
+        contextdrawArea.stroke();
     }
 }
 function clearDraw(){
-    contextScreen.clearRect(0, 0, 960, 600);
+    contextdrawArea.clearRect(0, 0, 960, 600);
    
 }
 
@@ -69,14 +78,16 @@ function sizing(e){
 }
 
 // lista de eventos 
-screen.addEventListener("mousedown", startDraw, false);
-screen.addEventListener("mouseup", finishDraw, false);
-screen.addEventListener("mousemove", draw, false);
-screen.addEventListener("mouseover", lostFocus, false);
+drawArea.addEventListener("mousedown", startDraw, false);
+drawArea.addEventListener("mouseup", finishDraw, false);
+drawArea.addEventListener("mousemove", draw, false);
+drawArea.addEventListener("mouseover", lostFocus, false);
+// função em bug pois perde o desenho quando redimensona a tela 
+// window.addEventListener("resize", resizeScreen);
 
 // pegando inpulte do menu
-menuController.addEventListener("click", menuOptions)
-toolControler.inputlSize.addEventListener("change", sizing)
+// menuController.addEventListener("click", menuOptions)
+// toolControler.inputlSize.addEventListener("change", sizing)
 
 
 

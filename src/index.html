@@ -7,22 +7,15 @@
     <title>My draw online</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
-    <div class="wraper">
-        <h1 class="title">draw here</h1>
-        <canvas id="screen" width="960" height="600">
-            <h1>Infelismente seu navegador não suporta esse recurso</h1>
+<body> 
+    <div class="screen" width="500" heidth="500">
+       <div id="optionsBar">
+           <span class="brand">My Draw</span>
+       </div>
+        <canvas id="drawArea">
+            infelismente seu navegador não suporta esse recurso
         </canvas>
-        <!-- controle de opção do quadro de desenho -->
-        <div id="menuController">
-            <span id="pencil" class="btn-option"></span>
-            <span id="rubber" class="btn-option"></span>
-            <span id="clear" class="btn-option"></span>
-        </div>
-        <div id="toolController">
-            <label>Size</label>
-            <input id="sizeTool" type="number" placeholder="3">
-        </div>
+
     </div>
 
     <script src="./index.js"></script>
