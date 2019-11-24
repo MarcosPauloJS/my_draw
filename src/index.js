@@ -1,7 +1,7 @@
 const drawArea = document.querySelector("#drawArea");
 const contextdrawArea = drawArea.getContext("2d");
 
-const menuController = document.querySelector("#menuController")
+const menuController = document.querySelector("#toolBar")
 
 const toolControler = {
     inputlSize: document.querySelector("#sizeTool")
@@ -20,6 +20,8 @@ const drawController = {
 window.addEventListener("load", resizeScreen)
 
 function resizeScreen(){
+    drawController.width = window.innerWidth;
+    drawController.height = window.innerHeight;
     drawArea.width = window.innerWidth;
     drawArea.height = window.innerHeight;
 }
@@ -48,7 +50,7 @@ function draw(e){
     }
 }
 function clearDraw(){
-    contextdrawArea.clearRect(0, 0, 960, 600);
+    contextdrawArea.clearRect(0, 0, drawController.width, drawController.heigth);
    
 }
 
@@ -63,7 +65,7 @@ function toolRubber(){
 function menuOptions(e){
     const target = e.target;
     if(target.id === "pencil") toolPencil();
-    if(target.id === "rubber")  toolRubber();
+    if(target.id === "rubber") toolRubber();
     if(target.id === "clear") clearDraw();
 }
 
@@ -74,7 +76,6 @@ function menuOptions(e){
 
 function sizing(e){
     drawController.size = e.target.value;
-    console.log(drawController.size);
 }
 
 // lista de eventos 
@@ -86,8 +87,8 @@ drawArea.addEventListener("mouseover", lostFocus, false);
 // window.addEventListener("resize", resizeScreen);
 
 // pegando inpulte do menu
-// menuController.addEventListener("click", menuOptions)
-// toolControler.inputlSize.addEventListener("change", sizing)
+menuController.addEventListener("click", menuOptions)
+toolControler.inputlSize.addEventListener("change", sizing)
 
 
 

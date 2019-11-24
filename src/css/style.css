@@ -11,18 +11,123 @@
     width: 100vw;
     height: 100vh;
 }
-.screen >#optionsBar{
+.screen >.optionsBar{
     height: 5vh;
-    background-color: #333333;
+    background-color: #2D2E33;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.screen >.optionsBar >.brand{
+    width: 13%;
+    margin-left: 1%;
+    font-size: 2.2vw;
+    color: #F3F3F4;
+}
+
+/* divisoria verticaal para barra de inpult */
+/* .lineVertical{
+    margin: 5px;
+    width: 2px;
+    height: 60%;
+    background-color: #46484F;  
+} */
+
+.screen >.optionsBar >.settingsTools{
+    width: 80%;
+    height: 100%;
+    font-size: 1vw;
+    color: #F3F3F4;
     display: flex;
     align-items: center;
 }
-.screen >#optionsBar >.brand{
-    margin-left: 1%;
-    font-size: 3.3vh;
-    color: #fff;
+
+.screen >.optionsBar >.settingsTools >.field{
+    margin: 5px;
 }
 
-.screen >#drawArea{
-    
+.screen >.optionsBar >.settingsTools >.inpultTools{
+    color: #F3F3F4;
+    margin: 5px;
+    border: 1px solid #46484F;
+    border-radius: 3px;
+    padding: 4px;
+    background-color: #3A3C42;
 }
+
+.screen >#toolBar{
+    width: 64px;
+    height: 95vh;
+    position: absolute;
+    z-index: 10;
+    border: 2px solid #3A3C42;
+    background-color: #2D2E33; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+.screen >#toolBar >.toolIcons{
+    width: 48px;
+    height: 48px;
+    margin: 10px;
+    background-size: 32px 32px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.screen >#toolBar >#pencil{ 
+    background-image: url("../assets/img/pencil.svg");
+}
+.screen >#toolBar >#rubber{
+    background-image: url("../assets/img/rubber.svg");
+
+}
+
+.screen >#toolBar >#clear{
+    background-image: url("../assets/img/garbage.svg");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Color Theme Swatches in Hex */
+.ProcessPlas_cinzas-1-hex { color: #F3F3F4; }
+.ProcessPlas_cinzas-2-hex { color: #7E828F; }
+.ProcessPlas_cinzas-3-hex { color: #3A3C42; }
+.ProcessPlas_cinzas-4-hex { color: #46484F; }
+.ProcessPlas_cinzas-5-hex { color: #2D2E33; }
+
+/* Color Theme Swatches in RGBA */
+.ProcessPlas_cinzas-1-rgba { color: rgba(243, 243, 244, 1); }
+.ProcessPlas_cinzas-2-rgba { color: rgba(126, 130, 143, 1); }
+.ProcessPlas_cinzas-3-rgba { color: rgba(58, 60, 66, 1); }
+.ProcessPlas_cinzas-4-rgba { color: rgba(70, 72, 79, 1); }
+.ProcessPlas_cinzas-5-rgba { color: rgba(45, 46, 51, 1); }
+
+/* Color Theme Swatches in HSLA */
+.ProcessPlas_cinzas-1-hsla { color: hsla(240, 4, 95, 1); }
+.ProcessPlas_cinzas-2-hsla { color: hsla(225, 7, 52, 1); }
+.ProcessPlas_cinzas-3-hsla { color: hsla(225, 6, 24, 1); }
+.ProcessPlas_cinzas-4-hsla { color: hsla(226, 6, 29, 1); }
+.ProcessPlas_cinzas-5-hsla { color: hsla(230, 6, 18, 1); }

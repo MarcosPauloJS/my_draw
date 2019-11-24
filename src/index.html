@@ -9,9 +9,20 @@
 </head>
 <body> 
     <div class="screen" width="500" heidth="500">
-       <div id="optionsBar">
+       <header class="optionsBar">
            <span class="brand">My Draw</span>
-       </div>
+            <div class="settingsTools">
+                <span class="partition"></span>
+                <label class="field">Size:</label>
+                <input class="inpultTools" id="sizeTool" type="number" placeholder="3"/>
+            </div>
+        </header>
+    
+        <div id="toolBar">
+            <div class="toolIcons" id="pencil"></div>
+            <div class="toolIcons" id="rubber"></div>
+            <div class="toolIcons" id="clear"></div>
+        </div>
         <canvas id="drawArea">
             infelismente seu navegador não suporta esse recurso
         </canvas>
