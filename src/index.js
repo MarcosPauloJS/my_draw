@@ -25,6 +25,7 @@ function startDraw(e) {
 // finaliza o desenho da linha assim que solta o botão do mouse 
 function finishDraw(e) {
     drawController.drawing = false;
+
 };
 
 // função resposavel pelo desenho
@@ -60,7 +61,7 @@ function menuOptions(e){
 
 // para o desenho, quando o mouse saia a da area de desenho.
  function lostFocus(){ 
-     drawController.drawing = false 
+  drawController.drawing = false;
  }
 
 function sizing(e){
