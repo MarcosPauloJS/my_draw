@@ -51,7 +51,7 @@ function draw(e){
     }
 }
 function clearDraw(){
-    contextdrawArea.clearRect(0, 0, drawController.width, drawController.heigth);
+    contextdrawArea.clearRect(0, 0, drawController.width, drawController.height);
    
 }
 

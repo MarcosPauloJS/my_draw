@@ -11,6 +11,12 @@
     width: 100vw;
     height: 100vh;
 }
+.screen >#drawArea{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .screen >.optionsBar{
     height: 5vh;
     background-color: #2D2E33;
