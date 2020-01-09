@@ -20,10 +20,15 @@ const drawController = {
 window.addEventListener("load", resizeScreen)
 
 function resizeScreen(){
+    
     drawController.width = window.innerWidth;
-    drawController.height = window.innerHeight;
-    drawArea.width = window.innerWidth;
-    drawArea.height = window.innerHeight;
+    console.log(window.innerHeight);
+    drawController.height = window.innerHeight - drawArea.offsetTop;
+    console.log(drawArea.offsetTop); 
+    console.log(drawController.heigth);
+
+    drawArea.width = drawController.width;
+    drawArea.height = drawController.height;
 }
 
 // função para comecar o desenho
@@ -50,6 +55,8 @@ function draw(e){
         contextdrawArea.stroke();
     }
 }
+
+
 function clearDraw(){
     contextdrawArea.clearRect(0, 0, drawController.width, drawController.height);
    
@@ -62,12 +69,17 @@ function toolPencil(){
 function toolRubber(){
     drawController.color = "rgb(255, 255, 255)";
 }
+function squareDraw(){
+    contextdrawArea.fillRect(150, 150, 150, 150)
+}
+
 
 function menuOptions(e){
     const target = e.target;
     if(target.id === "pencil") toolPencil();
     if(target.id === "rubber") toolRubber();
     if(target.id === "clear") clearDraw();
+    if(target.id === "square") squareDraw();
 }
 
 // para o desenho, quando o mouse saia a da area de desenho.

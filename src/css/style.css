@@ -11,10 +11,11 @@
     width: 100vw;
     height: 100vh;
 }
+
 .screen >#drawArea{
-    position: absolute;
+    /* position: absolute;
     top: 0;
-    left: 0;
+    left: 0; */
 }
 
 .screen >.optionsBar{
@@ -92,6 +93,19 @@
 .screen >#toolBar >#clear{
     background-image: url("../assets/img/garbage.svg");
 }
+.screen >#toolBar >#square{
+    background-image: url("../assets/img/square.svg");
+}
+.screen >#toolBar >#circle{
+    background-image: url("../assets/img/circle.svg");
+}
+.screen >#toolBar >#triangle{
+    background-image: url("../assets/img/triangle.svg");
+}
+.screen >#toolBar >#line{
+    background-image: url("../assets/img/line.svg");
+}
+
 
 
 
